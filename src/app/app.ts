@@ -21,8 +21,6 @@ import { RouterOutlet } from '@angular/router';
     Footer,
     RouterOutlet
   ],
-  
-  template: `<router-outlet></router-outlet>`,
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
