@@ -5,9 +5,17 @@
     Your browser does not support the video tag.
   </video>
 
+<script>
+  const video = document.getElementById('heroVideo');
+  if (video) {
+    video.play().catch(e => console.log("Autoplay issue:", e));
+  }
+</script>
+
   <div class="hero-overlay">
-    <h2>Welcome to Trot Dog Care</h2>
-    <p>Professional dog walking and care with love!</p>
-    <a href="#contact" class="btn-primary">Book Now</a>
+    <h2>Your Dog's second Best Friend!</h2>
+    <p>Trusted care, joyful tails, every step of the way.</p>
+    <a href="#contact" class="btn-primary">Book a Walk</a>
   </div>
+
 </section>
