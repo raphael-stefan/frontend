@@ -307,40 +307,44 @@ nav a:hover {
 
 
 /* Galeria */
+.gallery-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section-title {
+  font-size: 28px;
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-align: left;
+  color: #333;
+}
+
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(4, 1fr); /* 4 fotos por linha */
+  gap: 20px;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 220px; /* define altura padrão */
+  object-fit: cover; /* mantém proporção cortando com elegância */
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-  aspect-ratio: 3 / 4;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.02);
-}
-
-.gallery-heading {
-  font-size: 2.2rem;
-  color: #0297f5;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.gallery-intro {
-  font-size: 1.4rem;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 30px;
-  color: #444;
-  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 /* Serviços */
@@ -383,16 +387,20 @@ nav a:hover {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
 }
 
 .gallery-grid img {
   width: 100%;
-  border-radius: 12px;
+  height: auto;
   object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  aspect-ratio: 3 / 4; 
 }
+
 
 /* Footer */
 footer {
@@ -443,3 +451,104 @@ footer {
   text-align: left;
   margin-left: 40px;
 } 
+
+/* contact */
+
+.contact-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.form-row input {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: flex-start;
+}
+
+/* footer */ 
+
+.footer {
+  background-color: #fef8f3; /* tom suave, diferente do branco da página */
+  color: #444;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 40px 20px;
+  border-top: 1px solid #ddd;
+}
+
+.footer a {
+  color: #0094ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* booking page */
+
+.booking {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.booking h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #0077e2;
+}
+
+.booking p {
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.booking-table {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: #fefefe;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.booking-row.header {
+  background: #f0f0f0;
+  font-weight: bold;
+}
+
