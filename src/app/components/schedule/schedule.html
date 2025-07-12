@@ -1,0 +1,26 @@
+<form (ngSubmit)="submitForm()" #scheduleForm="ngForm" class="contact-form">
+  <input name="name" [(ngModel)]="form.name" placeholder="Your Name" required />
+  <input type="email" name="email" [(ngModel)]="form.email" placeholder="Email" required />
+  <input type="date" name="date" [(ngModel)]="form.date" required />
+
+  <select name="service" [(ngModel)]="form.service" required>
+    <option value="">Choose a Service</option>
+    <option>Dog Walking</option>
+    <option>Daycare</option>
+    <option>Boarding</option>
+    <option>Grooming</option>
+  </select>
+
+  <input name="address" [(ngModel)]="form.address" placeholder="Your Address" required />
+
+  <select name="dogSize" [(ngModel)]="form.dogSize" required>
+    <option value="">Dog Size</option>
+    <option>Small</option>
+    <option>Medium</option>
+    <option>Large</option>
+  </select>
+
+  <textarea name="notes" [(ngModel)]="form.notes" placeholder="Notes about your dog"></textarea>
+
+  <button type="submit">Request Schedule</button>
+</form>

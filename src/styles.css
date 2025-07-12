@@ -154,10 +154,10 @@ nav a:hover {
 }
 
 
-.about-section h2 {
+.containerabout h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #222;
+  color: #0297f5;
 }
 
 .about-section p {
@@ -418,13 +418,14 @@ footer {
   padding: 0 20px;
 }
 
-.containerabout {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.5%;
+.container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0297f5;
 }
 
 /* Responsivo */
+
 @media (max-width: 768px) {
   .logo-wrapper img,
   header img {
@@ -449,7 +450,7 @@ footer {
 
 .section-title {
   text-align: left;
-  margin-left: 40px;
+  
 } 
 
 /* contact */
@@ -523,7 +524,7 @@ footer {
 .booking h2 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #0077e2;
+  color: #0297f5;
 }
 
 .booking p {
@@ -551,4 +552,74 @@ footer {
   background: #f0f0f0;
   font-weight: bold;
 }
+
+/* Reviews Section */
+
+.reviews-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.reviews-section h2 {
+  font-size: 2rem;
+  color: #0297f5;
+  margin-bottom: 30px;
+}
+
+.review {
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  font-style: italic;
+  color: #444;
+}
+
+.review-author {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* How It Works Section */
+
+.how-it-works-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.how-it-works-section h2 {
+  font-size: 2rem;
+  color: #0297f5;
+  margin-bottom: 40px;
+}
+
+.how-it-works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.how-step {
+  background: #f1f9ff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.how-step h3 {
+  margin-bottom: 10px;
+  color: #0297f5;
+  font-size: 1.1rem;
+}
+
+.align-left {
+  text-align: left;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+
 

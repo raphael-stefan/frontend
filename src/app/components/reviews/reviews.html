@@ -1,0 +1,10 @@
+<section class="reviews-section">
+  <h2>What Our Clients Say</h2>
+
+  <div *ngIf="reviews.length === 0">No reviews available yet.</div>
+
+  <div *ngFor="let review of reviews" class="Reviews">
+    <p>⭐⭐⭐⭐⭐ "{{ review.text }}"</p>
+    <p class="review-author">– {{ review.author }}</p>
+  </div>
+</section>
