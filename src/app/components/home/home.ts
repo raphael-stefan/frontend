@@ -3,7 +3,7 @@ import { Hero } from '../hero/hero';
 import { About } from '../about/about';
 import { Services } from '../services/services';
 import { Gallery } from '../gallery/gallery';
-import { Contact } from '../contact/contact';
+import { ContactComponent} from '../contact/contact';
 import { Footer } from '../footer/footer';
 import { Navbar } from '../navbar/navbar';
 
@@ -11,7 +11,7 @@ import { Navbar } from '../navbar/navbar';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Navbar, Hero, About, Services, Gallery, Contact, Footer],
+  imports: [Navbar, Hero, About, Services, Gallery, ContactComponent, Footer],
   template: `
     <app-navbar></app-navbar>
     <app-hero></app-hero>

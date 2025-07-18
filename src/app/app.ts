@@ -4,7 +4,7 @@ import { Hero } from './components/hero/hero';
 import { About } from './components/about/about';
 import { Gallery } from './components/gallery/gallery';
 import { Services } from './components/services/services';
-import { Contact } from './components/contact/contact';
+import { ContactComponent } from './components/contact/contact';
 import { Footer } from './components/footer/footer';
 import { RouterOutlet } from '@angular/router';
 
@@ -17,7 +17,7 @@ import { RouterOutlet } from '@angular/router';
     About,
     Gallery,
     Services,
-    Contact,
+    ContactComponent,
     Footer,
     RouterOutlet
   ],
