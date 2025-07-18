@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 export interface Schedule {
   name: string;
   email: string;
+  phone: string;
   date: string;
   service: string;
   address: string;

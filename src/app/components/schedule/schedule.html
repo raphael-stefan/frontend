@@ -1,14 +1,26 @@
 <form (ngSubmit)="submitForm()" #scheduleForm="ngForm" class="contact-form">
   <input name="name" [(ngModel)]="form.name" placeholder="Your Name" required />
   <input type="email" name="email" [(ngModel)]="form.email" placeholder="Email" required />
-  <input type="date" name="date" [(ngModel)]="form.date" required />
+  <input type="tel" name="phone" [(ngModel)]="form.phone" placeholder="Phone Number" required />
+ 
+  <input
+  type="text"
+  name="date"
+  [(ngModel)]="form.date"
+  placeholder="MM/DD/YYYY"
+  required
+  maxlength="10"
+  (input)="formatDate($event)"
+  (blur)="validateDate()"
+/>
+
 
   <select name="service" [(ngModel)]="form.service" required>
     <option value="">Choose a Service</option>
     <option>Dog Walking</option>
     <option>Daycare</option>
     <option>Boarding</option>
-    <option>Grooming</option>
+    <!-- <option>Grooming</option> -->
   </select>
 
   <input name="address" [(ngModel)]="form.address" placeholder="Your Address" required />

@@ -17,6 +17,7 @@ export class ScheduleComponent {
   form: Schedule = {
     name: '',
     email: '',
+    phone: '',     // <- Adicionado aqui
     date: '',
     service: '',
     address: '',
@@ -24,13 +25,47 @@ export class ScheduleComponent {
     notes: ''
   };
 
+  formatDate(event: any) {
+  let input = event.target.value.replace(/\D/g, ''); // Remove tudo que não é número
+
+  if (input.length >= 3 && input.length <= 4) {
+    input = input.replace(/^(\d{2})(\d{1,2})/, '$1/$2');
+  } else if (input.length > 4) {
+    input = input.replace(/^(\d{2})(\d{2})(\d{1,4}).*/, '$1/$2/$3');
+  }
+
+  this.form.date = input;
+}
+
+
+  validateDate() {
+  const inputDate = new Date(this.form.date);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Zera hora para comparação apenas por dia
+
+  
+
+  if (isNaN(inputDate.getTime())) {
+    alert("❌ Invalid date format. Please use MM/DD/YYYY.");
+    this.form.date = '';
+    return;
+  }
+
+  if (inputDate < today) {
+    alert("❌ You cannot schedule a date in the past.");
+    this.form.date = '';
+  }
+}
+
+
   submitForm() {
     this.scheduleService.create(this.form).subscribe({
       next: () => {
-        alert('✅ Agendamento enviado com sucesso!');
+        alert('✅ Appointment successfully submitted!');
         this.form = {
           name: '',
           email: '',
+          phone: '',       // <- Adicionado aqui também
           address: '',
           dogSize: '',
           notes: '',
@@ -39,8 +74,8 @@ export class ScheduleComponent {
         };
       },
       error: (err) => {
-        console.error('❌ Erro ao enviar agendamento:', err);
-        alert('Erro ao enviar agendamento.');
+        console.error('❌ There was an error submitting your appointment. Please try again.', err);
+        alert('There was an error submitting your appointment. Please try again.');
       }
     });
   }
