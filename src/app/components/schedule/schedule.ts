@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ScheduleService } from '../../services/schedule.service';
+import { Schedule } from '../../services/schedule.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -9,8 +11,10 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './schedule.html',
   styleUrls: ['./schedule.css']
 })
-export class Schedule {
-  form = {
+export class ScheduleComponent {
+  scheduleService = inject(ScheduleService);
+
+  form: Schedule = {
     name: '',
     email: '',
     date: '',
@@ -21,23 +25,23 @@ export class Schedule {
   };
 
   submitForm() {
-    const url = 'https://script.google.com/macros/s/AKfycbx-MYcLh6t3Sr_c7-E4x1ka7DoFacutLyDmhbDCQD7w35_hMxvmZxNCgv1Z9yiNjyKw/exec';
-
-    fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(this.form),
-      headers: { 'Content-Type': 'application/json' }
-    })
-      .then(res => res.json())
-      .then(data => {
-        alert('Schedule submitted successfully!');
-        this.form = { name: '', email: '', date: '', service: '', address: '', dogSize: '', notes: '' };
-      })
-      .catch(err => {
-        alert('There was an error submitting the schedule.');
-        console.error(err);
-      });
+    this.scheduleService.create(this.form).subscribe({
+      next: () => {
+        alert('✅ Agendamento enviado com sucesso!');
+        this.form = {
+          name: '',
+          email: '',
+          address: '',
+          dogSize: '',
+          notes: '',
+          date: '',
+          service: ''
+        };
+      },
+      error: (err) => {
+        console.error('❌ Erro ao enviar agendamento:', err);
+        alert('Erro ao enviar agendamento.');
+      }
+    });
   }
 }
-
-

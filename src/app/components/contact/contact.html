@@ -5,13 +5,12 @@
       Whether it’s walking, boarding, or just a belly rub – we’d love to hear from you!
     </p>
 
-    <form class="contact-form">
-      <div class="form-row">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-      </div>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit" class="btn-primary">Send Message</button>
+    <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+      <input type="text" [(ngModel)]="form.name" name="name" placeholder="Seu nome" required />
+      <input type="email" [(ngModel)]="form.email" name="email" placeholder="Seu e-mail" required />
+      <textarea [(ngModel)]="form.message" name="message" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
     </form>
+  
   </div>
 </section>

@@ -3,6 +3,7 @@ import { App } from './app/app';
 import { provideRouter, withEnabledBlockingInitialNavigation, withComponentInputBinding } from '@angular/router';
 import { routes } from './app/app.routes';
 import { RouterFeature, RouterFeatures } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
 
 bootstrapApplication(App, {
   providers: [
@@ -14,7 +15,8 @@ bootstrapApplication(App, {
         scrollPositionRestoration: 'enabled', // <=== ESSENCIAL
         anchorScrolling: 'enabled',           // <=== ESSENCIAL
       })
-    )
+    ),
+    provideHttpClient() // ✅ ADICIONAR AQUI
   ]
 });
 function withRouterConfig(config: {

@@ -12,11 +12,8 @@ export class Reviews {
   reviews = [
     {
       text: 'Trot Dog Care is absolutely amazing. I trust them with my fur baby every day!',
-      author: 'Emma R., SoMa'
+      author: 'Raissa S., San Bruno'
     },
-    {
-      text: 'The walkers are dependable and kind. My pup is always excited to see them!',
-      author: 'Jason M., Mission District'
-    }
+    
   ];
 }
