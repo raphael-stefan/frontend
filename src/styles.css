@@ -1,4 +1,24 @@
 /* Base */
+:root {
+  --header-height: 140px; /* Altura aproximada do header */
+}
+
+/* Adicione scroll-margin-top para os elementos alvo */
+#dog-walking, 
+#day-care, 
+#boarding {
+  scroll-margin-top: calc(var(--header-height) + 20px); /* Header + margem */
+}
+
+/* Garante que o conteúdo principal não fique escondido pelo header fixo */
+main {
+  padding-top: var(--header-height);
+}
+
+/* Ajuste para o hero video */
+.hero-video {
+  padding-top: 0; /* Remove o padding-top anterior */
+}
 body {
   font-family: 'Baloo 2', cursive;
   margin: 0;
@@ -620,6 +640,20 @@ footer {
   padding-left: 0;
   margin-left: 0;
 }
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 100px; /* Altura menor para mobile */
+  }
+  
+  /* Ajuste adicional para garantir espaço */
+  main {
+    padding-top: var(--header-height);
+  }
+}
+
+
+
 
 
 

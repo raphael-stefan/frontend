@@ -1,8 +1,38 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { App } from './app/app';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withEnabledBlockingInitialNavigation, withComponentInputBinding } from '@angular/router';
 import { routes } from './app/app.routes';
+import { RouterFeature, RouterFeatures } from '@angular/router';
 
 bootstrapApplication(App, {
-  providers: [provideRouter(routes)],
+  providers: [
+    provideRouter(
+      routes,
+      withEnabledBlockingInitialNavigation(),
+      withComponentInputBinding(),
+      withRouterConfig({
+        scrollPositionRestoration: 'enabled', // <=== ESSENCIAL
+        anchorScrolling: 'enabled',           // <=== ESSENCIAL
+      })
+    )
+  ]
 });
+function withRouterConfig(config: {
+  scrollPositionRestoration: 'enabled' | 'disabled' | 'top';
+  anchorScrolling: 'enabled' | 'disabled';
+}): RouterFeature<any> {
+  return {
+    ɵkind: 'feature',
+    ɵproviders: [
+      {
+        provide: 'ROUTER_SCROLL_POSITION_RESTORATION',
+        useValue: config.scrollPositionRestoration,
+      },
+      {
+        provide: 'ROUTER_ANCHOR_SCROLLING',
+        useValue: config.anchorScrolling,
+      },
+    ],
+  } as RouterFeature<any>;
+}
+
