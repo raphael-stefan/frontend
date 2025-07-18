@@ -10,14 +10,14 @@ export interface Schedule {
   service: string;
   address: string;
   dogSize: string;
-  notes: string;
+  message: string;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScheduleService {
-  private apiUrl = 'http://localhost:8080/schedules';
+  private apiUrl = 'http://localhost:8080/api/schedule';
 
   constructor(private http: HttpClient) {}
 

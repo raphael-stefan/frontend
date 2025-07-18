@@ -3,7 +3,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ContactService, Contact } from '../../services/contact.services';
+import { ContactService, Contact } from '../../services-backend/contact.services';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +13,7 @@ import { ContactService, Contact } from '../../services/contact.services';
   styleUrls: ['./contact.css']
 })
 export class ContactComponent {
-  contactService = inject(ContactService);
+  contactService = inject(ContactService) as ContactService;
 
   form: Contact = {
     name: '',
@@ -22,14 +22,23 @@ export class ContactComponent {
   };
 
   submitForm() {
+    interface SendResponse {
+      success: boolean;
+      message?: string;
+    }
+
+    interface SendError {
+      error: any;
+    }
+
     this.contactService.send(this.form).subscribe({
-      next: () => {
-        alert('✅ Mensagem enviada com sucesso!');
-        this.form = { name: '', email: '', message: '' };
+      next: (): void => {
+      alert('✅ Mensagem enviada com sucesso!');
+      this.form = { name: '', email: '', message: '' };
       },
-      error: (err) => {
-        console.error('Erro ao enviar mensagem:', err);
-        alert('Erro ao enviar mensagem');
+      error: (err: SendError): void => {
+      console.error('Erro ao enviar mensagem:', err);
+      alert('Erro ao enviar mensagem');
       }
     });
   }

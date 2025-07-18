@@ -14,7 +14,7 @@ export interface Contact {
   providedIn: 'root'
 })
 export class ContactService {
-  private apiUrl = 'http://localhost:8080/api/contacts'; // ajuste se necessário
+  private apiUrl = 'http://localhost:8080/api/contact'; // ajuste se necessário
 
   constructor(private http: HttpClient) {}
 

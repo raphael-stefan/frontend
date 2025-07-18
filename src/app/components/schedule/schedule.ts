@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { ScheduleService } from '../../services/schedule.service';
-import { Schedule } from '../../services/schedule.service';
+import { ScheduleService } from '../../services-backend/schedule.service';
+import { Schedule } from '../../services-backend/schedule.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -21,7 +21,7 @@ export class ScheduleComponent {
     service: '',
     address: '',
     dogSize: '',
-    notes: ''
+    message: '' // ✅ CORRETO para bater com o backend
   };
 
   submitForm() {
@@ -33,9 +33,9 @@ export class ScheduleComponent {
           email: '',
           address: '',
           dogSize: '',
-          notes: '',
           date: '',
-          service: ''
+          service: '',
+          message: '' // ✅ limpar corretamente
         };
       },
       error: (err) => {
