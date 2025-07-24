@@ -2,10 +2,11 @@
 builder = "nixpacks"
 
 [build.nixpacksConfig]
-nodeVersion = "20.18.1"
+nodeVersion = "20.19.0"
 
-[env]
-NODE_VERSION = "20.18.1"
+[variables]
+NODE_VERSION = "20.19.0"
+NPM_CONFIG_ENGINE_STRICT = "false"
 
 [deploy]
 healthcheckPath = "/"
