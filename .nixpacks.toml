@@ -1,11 +1,13 @@
 [variables]
 NODE_VERSION = "22.12.0"
+NG_CLI_ANALYTICS = "false"
+NODE_OPTIONS = "--max-old-space-size=4096"
 
 [phases.install]
 cmds = ["npm ci"]
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = ["npm run build -- --skip-nx-cache"]
 
 [phases.start]
 cmd = "npx http-server ./dist/frontend -p $PORT -a 0.0.0.0"
