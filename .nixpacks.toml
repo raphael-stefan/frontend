@@ -3,7 +3,7 @@ NODE_VERSION = "20.19.0"
 NODE_OPTIONS = "--max-old-space-size=4096"
 
 [phases.build]
-cmds = ["./build.sh"]
+cmds = ["npm ci", "npm run build"]
 
 [phases.start]
-cmd = "http-server ./dist/frontend -p $PORT -a 0.0.0.0"
+cmd = "npx http-server ./dist/frontend -p $PORT -a 0.0.0.0"
