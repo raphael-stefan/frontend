@@ -1,9 +1,11 @@
 [variables]
-NODE_VERSION = "22.12.0"
-NODE_OPTIONS = "--max-old-space-size=4096"
+NODE_VERSION = "22"
+
+[phases.install]
+cmds = ["npm ci"]
 
 [phases.build]
-cmds = ["npm ci", "npm run build"]
+cmds = ["npm run build"]
 
 [phases.start]
 cmd = "npx http-server ./dist/frontend -p $PORT -a 0.0.0.0"
