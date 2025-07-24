@@ -4,7 +4,7 @@ NG_CLI_ANALYTICS = "false"
 NODE_OPTIONS = "--max-old-space-size=4096"
 
 [phases.install]
-cmds = ["npm ci"]
+cmds = ["rm -rf node_modules package-lock.json", "npm install"]
 
 [phases.build]
 cmds = ["npm run build -- --skip-nx-cache"]
