@@ -586,104 +586,105 @@ footer {
   margin-left: 0;
 }
 
-/* RESPONSIVO MOBILE */
+/* RESPONSIVO MOBILE - VERSÃO MAIS CONSERVADORA */
 @media (max-width: 768px) {
   :root {
-    --header-height: 160px; /* Altura maior para mobile devido ao layout vertical */
+    --header-height: 120px; /* Altura menor para mobile */
   }
 
-  /* Header mobile */
+  /* Header mobile - mantém mais similar ao desktop */
   header {
-    padding: 10px 15px;
+    padding: 12px 20px;
   }
 
   .logo-wrapper img,
   header img {
-    height: 60px;
-    max-width: 200px;
+    height: 80px; /* Redução menor do logo */
+    max-width: 220px;
     margin-bottom: 8px;
   }
 
   nav ul {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px; /* Gap maior para facilitar o toque */
     justify-content: center;
   }
 
   nav a {
-    font-size: 0.9rem;
-    padding: 5px 8px;
+    font-size: 0.95rem; /* Fonte apenas um pouco menor */
+    padding: 8px 12px; /* Área de toque maior */
   }
 
-  /* Hero mobile */
+  /* Hero mobile - mantém proporções similares */
   .hero-video {
     height: 100vh;
     padding-top: var(--header-height);
   }
 
   .hero-overlay {
-    margin: 0 10px;
-    padding: 15px;
+    margin: 0 15px;
+    padding: 18px;
   }
 
   .hero-overlay h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem; /* Redução menor da fonte */
+    margin-bottom: 12px;
   }
 
   .hero-overlay p {
-    font-size: 1rem;
-    margin-bottom: 15px;
+    font-size: 1.1rem; /* Fonte um pouco menor mas legível */
+    margin-bottom: 18px;
   }
 
   .btn-primary {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 12px 22px;
+    font-size: 1.05rem; /* Mantém tamanho similar */
   }
 
-  /* Sections mobile */
+  /* Sections mobile - mudanças mínimas */
   .container {
-    padding: 0 15px;
+    padding: 0 18px;
   }
 
   .container h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Redução menor */
     text-align: center;
   }
 
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Redução menor */
     text-align: center;
   }
 
-  /* Gallery mobile */
+  /* Gallery mobile - 2 colunas para melhor aproveitamento */
   .gallery-container {
-    padding: 0 15px;
+    padding: 0 18px;
   }
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 12px;
   }
 
-  /* Service cards mobile */
+  /* Service cards mobile - mantém estrutura similar */
   .service-card {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
+    margin: 0 10px;
   }
 
   .walker-card {
-    max-width: 100%;
+    max-width: 320px;
     margin: 0 10px;
   }
 
   .value-card {
-    flex: 1 1 100%;
+    flex: 1 1 300px; /* Permite 2 por linha em tablets */
     margin: 0 10px;
   }
 
-  /* Contact form mobile */
+  /* Contact form mobile - layout em coluna apenas quando necessário */
   .form-row {
     flex-direction: column;
   }
@@ -695,21 +696,21 @@ footer {
   /* Booking table mobile */
   .booking-row {
     grid-template-columns: 1fr;
-    gap: 10px;
-    text-align: center;
+    gap: 8px;
+    text-align: left; /* Alinhamento melhor para leitura */
   }
 
   .booking-row.header {
     display: none;
   }
 
-  /* Parallax mobile - remove fixed attachment */
+  /* Parallax mobile */
   .parallax-background {
     background-attachment: scroll;
   }
 
   .parallax-section {
-    height: 60vh;
+    height: 70vh; /* Altura maior para melhor proporção */
   }
 
   /* How it works mobile */
@@ -717,32 +718,54 @@ footer {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  /* Ajustes específicos para o formulário de contato */
+  .contact-section .section-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .contact-section .section-subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
   :root {
-    --header-height: 140px;
+    --header-height: 110px;
   }
 
-  /* Extra small screens */
+  /* Extra small screens - ajustes mínimos */
+  .logo-wrapper img,
+  header img {
+    height: 70px;
+    max-width: 200px;
+  }
+
   .hero-overlay h2 {
-    font-size: 1.5rem;
+    font-size: 2rem; /* Ainda grande e legível */
   }
 
   .hero-overlay p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .gallery-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Uma coluna apenas em telas muito pequenas */
   }
 
   nav ul {
-    gap: 10px;
+    gap: 15px;
   }
 
   nav a {
-    font-size: 0.8rem;
-    padding: 4px 6px;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  .container h2,
+  .section-title {
+    font-size: 1.6rem;
   }
 }
