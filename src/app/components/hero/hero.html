@@ -1,16 +1,9 @@
-<section class="hero-video" id ="hero">
-  <video autoplay muted loop playsinline>
+<section class="hero-video" id="hero">
+  <video #heroVideo autoplay muted loop playsinline preload="auto">
     <source src="assets/hero.mp4" type="video/mp4" />
 
     Your browser does not support the video tag.
   </video>
-
-<script>
-  const video = document.getElementById('heroVideo');
-  if (video) {
-    video.play().catch(e => console.log("Autoplay issue:", e));
-  }
-</script>
 
   <div class="hero-overlay">
     <h2>Your Dog's second Best Friend!</h2>
