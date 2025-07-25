@@ -4,8 +4,8 @@
 }
 
 /* Adicione scroll-margin-top para os elementos alvo */
-#dog-walking, 
-#day-care, 
+#dog-walking,
+#day-care,
 #boarding {
   scroll-margin-top: calc(var(--header-height) + 20px); /* Header + margem */
 }
@@ -41,6 +41,7 @@ header {
   width: 100%;
   z-index: 10;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .logo-wrapper img,
@@ -103,7 +104,7 @@ nav a:hover {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.4);
-  z-index: 0; 
+  z-index: 0;
 }
 
 .hero-overlay {
@@ -114,6 +115,7 @@ nav a:hover {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   color: white;
+  margin: 0 15px;
 }
 
 .hero-overlay h2 {
@@ -161,18 +163,17 @@ nav a:hover {
 }
 
 /* About Section */
-
 #about {
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: white; /* ou outra cor de fundo */
+  background-color: white;
 }
+
 .about-section {
   padding: 60px 20px;
   background-color: #fff;
   text-align: center;
 }
-
 
 .containerabout h2 {
   font-size: 2rem;
@@ -196,7 +197,6 @@ nav a:hover {
 }
 
 /* Walker Cards */
-
 .walkers-container {
   display: flex;
   flex-wrap: wrap;
@@ -246,7 +246,6 @@ nav a:hover {
 }
 
 /* Values Section */
-
 .about-values {
   display: flex;
   flex-wrap: wrap;
@@ -289,9 +288,7 @@ nav a:hover {
   color: #444;
 }
 
-
 /* Parallax Section */
-
 .parallax-section {
   position: relative;
   height: 80vh;
@@ -301,7 +298,7 @@ nav a:hover {
   justify-content: center;
   text-align: center;
   padding-top: 60px;
-  }
+}
 
 .parallax-background {
   position: absolute;
@@ -324,7 +321,6 @@ nav a:hover {
   max-width: 800px;
   padding: 20px;
 }
-
 
 /* Galeria */
 .gallery-section {
@@ -355,20 +351,21 @@ nav a:hover {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 fotos por linha */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: 220px; /* define altura padrão */
-  object-fit: cover; /* mantém proporção cortando com elegância */
+  height: auto;
+  object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  aspect-ratio: 3 / 4;
 }
 
 /* Serviços */
-
 .services-section {
   padding: 60px 20px;
   text-align: center;
@@ -405,23 +402,6 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-  aspect-ratio: 3 / 4; 
-}
-
-
 /* Footer */
 footer {
   text-align: center;
@@ -430,8 +410,22 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Container global */
+.footer {
+  background-color: #fef8f3;
+  color: #444;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 40px 20px;
+  border-top: 1px solid #ddd;
+}
 
+.footer a {
+  color: #0094ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Container global */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -444,37 +438,7 @@ footer {
   color: #0297f5;
 }
 
-/* Responsivo */
-
-@media (max-width: 768px) {
-  .logo-wrapper img,
-  header img {
-    height: 80px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero-overlay h2 {
-    font-size: 2rem;
-  }
-
-  .hero-overlay p {
-    font-size: 1rem;
-  }
-}
-
-/* Sections */
-
-.section-title {
-  text-align: left;
-  
-} 
-
-/* contact */
-
+/* Contact */
 .contact-section {
   padding: 60px 0;
   background-color: #f9f9f9;
@@ -501,6 +465,7 @@ footer {
   border-radius: 8px;
   width: 100%;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .form-row input {
@@ -516,25 +481,7 @@ footer {
   align-self: flex-start;
 }
 
-/* footer */ 
-
-.footer {
-  background-color: #fef8f3; /* tom suave, diferente do branco da página */
-  color: #444;
-  text-align: center;
-  font-size: 0.9rem;
-  padding: 40px 20px;
-  border-top: 1px solid #ddd;
-}
-
-.footer a {
-  color: #0094ff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* booking page */
-
+/* Booking page */
 .booking {
   padding: 60px 20px;
   max-width: 900px;
@@ -574,7 +521,6 @@ footer {
 }
 
 /* Reviews Section */
-
 .reviews-section {
   text-align: center;
   padding: 60px 20px;
@@ -601,7 +547,6 @@ footer {
 }
 
 /* How It Works Section */
-
 .how-it-works-section {
   background-color: #fff;
   padding: 60px 20px;
@@ -641,19 +586,163 @@ footer {
   margin-left: 0;
 }
 
+/* RESPONSIVO MOBILE */
 @media (max-width: 768px) {
   :root {
-    --header-height: 100px; /* Altura menor para mobile */
+    --header-height: 160px; /* Altura maior para mobile devido ao layout vertical */
   }
-  
-  /* Ajuste adicional para garantir espaço */
-  main {
+
+  /* Header mobile */
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo-wrapper img,
+  header img {
+    height: 60px;
+    max-width: 200px;
+    margin-bottom: 8px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 5px 8px;
+  }
+
+  /* Hero mobile */
+  .hero-video {
+    height: 100vh;
     padding-top: var(--header-height);
+  }
+
+  .hero-overlay {
+    margin: 0 10px;
+    padding: 15px;
+  }
+
+  .hero-overlay h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  /* Sections mobile */
+  .container {
+    padding: 0 15px;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  /* Gallery mobile */
+  .gallery-container {
+    padding: 0 15px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  /* Service cards mobile */
+  .service-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .walker-card {
+    max-width: 100%;
+    margin: 0 10px;
+  }
+
+  .value-card {
+    flex: 1 1 100%;
+    margin: 0 10px;
+  }
+
+  /* Contact form mobile */
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row input {
+    min-width: 100%;
+  }
+
+  /* Booking table mobile */
+  .booking-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .booking-row.header {
+    display: none;
+  }
+
+  /* Parallax mobile - remove fixed attachment */
+  .parallax-background {
+    background-attachment: scroll;
+  }
+
+  .parallax-section {
+    height: 60vh;
+  }
+
+  /* How it works mobile */
+  .how-it-works-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
+@media (max-width: 480px) {
+  :root {
+    --header-height: 140px;
+  }
 
+  /* Extra small screens */
+  .hero-overlay h2 {
+    font-size: 1.5rem;
+  }
 
+  .hero-overlay p {
+    font-size: 0.9rem;
+  }
 
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 
+  nav ul {
+    gap: 10px;
+  }
 
+  nav a {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+}
